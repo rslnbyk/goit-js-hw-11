@@ -65,6 +65,9 @@ searchForm.addEventListener('submit', async event => {
     }
 
     gallery.innerHTML = markup;
+    if (response.data.total / 40 < 1) {
+      return;
+    }
     moreBtn.classList.remove('visually-hidden');
   } catch (error) {
     console.log(error);
